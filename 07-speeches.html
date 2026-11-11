@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ⅶ 각종 식사(式辭)의 작성 — 의전·행사 매뉴얼</title>
+<style>
+:root{
+  --paper:#f5f3ee; --surface:#ffffff; --ink:#1b2430; --ink2:#3d4854; --muted:#66717d;
+  --line:#dcd8cf; --line2:#bfb9ac;
+  --navy:#12354a; --navy2:#1d4f6b; --navy-soft:#e6eef2;
+  --amber:#a8611c; --amber-soft:#f7ecdd;
+  --red:#a33a2c; --red-soft:#f8e9e5;
+  --green:#2c6b4f; --green-soft:#e5f1ea;
+  --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",sans-serif;
+  --serif:"Noto Serif KR","Nanum Myeongjo","KoPub Batang","Batang","바탕",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere;-webkit-text-size-adjust:100%}
+a{color:var(--navy2)}
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+aside.nav{background:var(--navy);color:#dbe6ec;position:sticky;top:0;height:100vh;overflow-y:auto;padding:26px 0 30px}
+.brand{padding:0 24px 20px;border-bottom:1px solid rgba(255,255,255,.14)}
+.brand small{display:block;font-size:12px;letter-spacing:.08em;color:#9fb6c2}
+.brand b{display:block;font-family:var(--serif);font-size:19px;line-height:1.4;color:#fff;margin-top:6px;font-weight:700}
+.brand span{display:inline-block;margin-top:10px;font-size:11.5px;border:1px solid rgba(255,255,255,.35);border-radius:3px;padding:1px 7px;color:#e8d3b5}
+nav.chap{padding:14px 12px 0}
+nav.chap a{display:flex;gap:10px;align-items:baseline;padding:8px 12px;border-radius:6px;color:#d2dfe6;text-decoration:none;font-size:14.5px;line-height:1.45}
+nav.chap a .no{flex:0 0 30px;font-family:var(--serif);color:#e0b77c;font-size:13.5px}
+nav.chap a:hover{background:rgba(255,255,255,.08)}
+nav.chap a.on{background:#fff;color:var(--navy);font-weight:700}
+nav.chap a.on .no{color:var(--amber)}
+.toc-in{margin:4px 12px 8px 52px;padding:0;list-style:none;border-left:1px solid rgba(255,255,255,.2)}
+.toc-in a{display:block;padding:3px 0 3px 12px;font-size:13px;color:#aebfca;text-decoration:none;line-height:1.5}
+.toc-in a:hover{color:#fff}
+.navfoot{margin:22px 24px 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;color:#93a9b5;line-height:1.6}
+.navfoot button{margin-top:10px;background:transparent;color:#dbe6ec;border:1px solid rgba(255,255,255,.35);border-radius:5px;padding:6px 12px;font:inherit;font-size:12.5px;cursor:pointer}
+.navfoot button:hover{background:rgba(255,255,255,.1)}
+main{min-width:0;padding:0 clamp(16px,5vw,64px) 80px}
+.wrap{max-width:880px;margin:0 auto}
+.mbar{display:none}
+header.ch{padding:54px 0 26px;border-bottom:3px double var(--line2);margin-bottom:34px}
+header.ch .no{font-family:var(--serif);font-size:15px;color:var(--amber);letter-spacing:.12em}
+header.ch h1{font-family:var(--serif);font-size:clamp(27px,4.2vw,38px);line-height:1.3;margin:8px 0 12px;color:var(--navy);font-weight:700;text-wrap:balance}
+header.ch p{margin:0;color:var(--ink2);max-width:66ch}
+h2{font-family:var(--serif);font-size:23px;color:var(--navy);margin:52px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line2);line-height:1.4;display:flex;gap:12px;align-items:baseline}
+h2 .n{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-size:15px;font-weight:700;transform:translateY(-2px)}
+h3{font-size:18px;margin:32px 0 8px;color:var(--ink);line-height:1.45}
+h3::before{content:"";display:inline-block;width:5px;height:16px;background:var(--amber);margin-right:9px;transform:translateY(2px)}
+h4{font-size:16px;margin:22px 0 6px;color:var(--navy2)}
+p{margin:8px 0 12px}
+ul,ol{margin:6px 0 14px;padding-left:22px}
+li{margin:3px 0}
+li>ul,li>ol{margin:3px 0 6px}
+strong{font-weight:700}
+.lead{font-size:17px;color:var(--ink2)}
+.tblw{overflow-x:auto;margin:14px 0 20px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.6}
+th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+tr>*:last-child{border-right:0} tbody tr:last-child>*{border-bottom:0}
+thead th{background:var(--navy-soft);color:var(--navy);font-weight:700;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line2)}
+tbody th{background:#faf8f4;font-weight:700;white-space:nowrap}
+td.c,th.c{text-align:center} td.nw{white-space:nowrap}
+table.num td:first-child{text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}
+caption{caption-side:top;text-align:left;padding:10px 12px 6px;font-weight:700;color:var(--ink2);font-size:14.5px}
+.co{border:1px solid var(--line);border-left:5px solid var(--navy2);background:var(--surface);border-radius:6px;padding:14px 18px;margin:16px 0}
+.co>b:first-child,.co>.t{display:block;font-size:13px;letter-spacing:.04em;color:var(--navy2);margin-bottom:4px;font-weight:700}
+.co p:last-child,.co ul:last-child,.co ol:last-child{margin-bottom:0}
+.co.key{border-left-color:var(--amber);background:var(--amber-soft)} .co.key>b:first-child{color:var(--amber)}
+.co.warn{border-left-color:var(--red);background:var(--red-soft)} .co.warn>b:first-child{color:var(--red)}
+.co.chk{border-left-color:var(--green);background:var(--green-soft)} .co.chk>b:first-child{color:var(--green)}
+.co.adapt{border-left-color:var(--navy);background:var(--navy-soft)} .co.adapt>b:first-child{color:var(--navy)}
+.src{font-size:13px;color:var(--muted);margin:6px 0 18px;padding-left:12px;border-left:2px solid var(--line2);line-height:1.6}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:14px 0 20px;background:var(--surface);font-size:14.5px;line-height:1.6}
+.cmp>div{padding:11px 14px;border-bottom:1px solid var(--line)}
+.cmp>div:nth-child(odd){border-right:1px solid var(--line);color:var(--ink2)}
+.cmp>div:nth-last-child(-n+2){border-bottom:0}
+.cmp>.h{font-weight:700;text-align:center;padding:9px}
+.cmp>.h.a{background:var(--red-soft);color:var(--red)} .cmp>.h.b{background:var(--green-soft);color:var(--green)}
+.cmp>div:nth-child(even):not(.h){font-weight:500}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0 20px}
+.flow>div{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--navy2);border-radius:6px;padding:12px 14px;font-size:14.5px;line-height:1.6}
+.flow>div b{display:block;color:var(--navy);margin-bottom:2px}
+.flow>div em{font-style:normal;display:inline-block;font-size:12.5px;color:var(--amber);font-weight:700;margin-bottom:4px}
+.order{list-style:none;padding:0;margin:14px 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:8px;counter-reset:o}
+.order>li{display:flex;gap:12px;align-items:baseline;padding:9px 16px;border-bottom:1px dashed var(--line);margin:0;counter-increment:o}
+.order>li:last-child{border-bottom:0}
+.order>li::before{content:counter(o);flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy-soft);color:var(--navy);font-size:12.5px;font-weight:700;display:inline-grid;place-items:center;transform:translateY(1px)}
+.order>li>span{flex:1}
+.order>li>i{font-style:normal;color:var(--muted);font-size:13.5px;text-align:right;flex:0 1 auto}
+.order small{display:block;color:var(--muted);font-size:13.5px;line-height:1.55}
+.cl{list-style:none;padding:0;margin:8px 0 18px}
+.cl li{margin:0;border-bottom:1px solid var(--line)}
+.cl label{display:flex;gap:10px;align-items:flex-start;padding:8px 4px;cursor:pointer;font-size:15px;line-height:1.6}
+.cl input{flex:none;width:18px;height:18px;margin-top:4px;accent-color:var(--navy2)}
+.cl input:checked+span{color:var(--muted);text-decoration:line-through}
+.cl small{color:var(--muted)}
+.clbar{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-top:18px}
+.clbar button{font:inherit;font-size:12.5px;background:var(--surface);border:1px solid var(--line2);border-radius:5px;padding:4px 10px;cursor:pointer;color:var(--ink2)}
+.dg{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 14px 12px;margin:14px 0 20px;text-align:center;overflow-x:auto}
+.dg figcaption,.dg .cap{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.55}
+.dg .ttl{font-size:14px;font-weight:700;color:var(--ink2);margin-bottom:12px}
+.dgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0 20px}
+.dgs .dg{margin:0}
+.row{display:flex;justify-content:center;gap:6px;margin:6px 0;flex-wrap:nowrap}
+.st{min-width:44px;height:40px;padding:0 8px;border:1.5px solid var(--line2);border-radius:6px;display:inline-grid;place-items:center;font-size:14px;font-weight:700;background:#fff;color:var(--ink2);white-space:nowrap}
+.st.vip{background:var(--navy);border-color:var(--navy);color:#fff}
+.st.sub{background:var(--amber-soft);border-color:#d9b98f;color:var(--amber)}
+.st.wide{min-width:150px}
+.st.ghost{border-style:dashed;color:var(--muted);font-weight:500}
+.pod{display:inline-block;margin-top:6px;padding:3px 26px;background:var(--ink2);color:#fff;border-radius:4px;font-size:13px}
+.aud{font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.06em}
+svg{max-width:100%;height:auto}
+svg text{font-family:var(--sans)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:12px 0 18px;font-size:15px}
+.kv dt{font-weight:700;color:var(--navy2)} .kv dd{margin:0}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:70px;padding-top:22px;border-top:1px solid var(--line2)}
+.pn a{flex:1;max-width:48%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;color:var(--ink)}
+.pn a small{display:block;color:var(--muted);font-size:12.5px}
+.pn a b{font-family:var(--serif);color:var(--navy)}
+.pn a.nx{text-align:right;margin-left:auto}
+.pn a:hover{border-color:var(--navy2)}
+footer.ft{margin-top:26px;font-size:12.5px;color:var(--muted);line-height:1.65}
+/* cover */
+.cover{padding:64px 0 34px;border-bottom:3px double var(--line2)}
+.cover .org{font-size:14px;letter-spacing:.14em;color:var(--amber);font-weight:700}
+.cover h1{font-family:var(--serif);font-size:clamp(34px,6vw,56px);line-height:1.22;color:var(--navy);margin:14px 0 10px;font-weight:700}
+.cover .sub{font-size:18px;color:var(--ink2);max-width:60ch}
+.cover .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 12px;font-size:13.5px;color:var(--ink2)}
+.cover .meta span{border:1px solid var(--line2);border-radius:4px;padding:3px 10px;background:var(--surface)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:18px 0 24px}
+.cards a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;transition:border-color .15s,transform .15s}
+.cards a:hover{border-color:var(--navy2);transform:translateY(-2px)}
+.cards a .no{font-family:var(--serif);color:var(--amber);font-size:14px;letter-spacing:.08em}
+.cards a b{display:block;font-family:var(--serif);font-size:18px;color:var(--navy);margin:2px 0 6px;line-height:1.4}
+.cards a span{font-size:13.5px;color:var(--muted);line-height:1.6;display:block}
+.motto{font-family:var(--serif);font-size:19px;line-height:1.7;color:var(--navy);border:1px solid var(--line2);background:var(--surface);border-radius:8px;padding:18px 22px;margin:22px 0;text-align:center;text-wrap:balance}
+@media (max-width:900px){
+  .layout{display:block}
+  aside.nav{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-102%);transition:transform .2s;z-index:30;height:100%}
+  body.open aside.nav{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.45)}
+  .mbar{display:flex;position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;align-items:center;gap:12px;padding:10px 16px;margin:0 calc(-1*clamp(16px,5vw,64px))}
+  .mbar button{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:5px;padding:4px 10px;font:inherit;font-size:14px}
+  .mbar b{font-family:var(--serif);font-size:15px}
+  header.ch{padding-top:34px}
+  html{scroll-padding-top:60px}
+  .cmp{grid-template-columns:1fr}
+  .cmp>.h.a,.cmp>.h.b{display:none}
+  .cmp>div:nth-child(odd){border-right:0;border-bottom:0;padding-bottom:2px;font-size:13.5px}
+  .cmp>div:nth-child(odd):not(.h)::before{content:"관행 ";color:var(--red);font-weight:700}
+  .cmp>div:nth-child(even):not(.h)::before{content:"개선 ";color:var(--green);font-weight:700}
+  .cmp>div:nth-last-child(2){border-bottom:0}
+  .pn{flex-direction:column}.pn a{max-width:none}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  aside.nav,.mbar,.pn,.clbar button,.noprint{display:none!important}
+  .layout{display:block} main{padding:0}
+  .wrap{max-width:none}
+  h2{break-after:avoid} h3{break-after:avoid}
+  .tblw,.dg,.co,.order,.cmp{break-inside:avoid;border-radius:0}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="nav">
+  <div class="brand"><small>전남광주통합특별시교육청</small><b>의전·행사 매뉴얼</b><span>2026. 11. (안)</span></div>
+  <nav class="chap" aria-label="차례">
+<a href="index.html"><span class="no">·</span><span>표지 · 요약 · 차례</span></a>
+<a href="01-overview.html"><span class="no">Ⅰ</span><span>매뉴얼 개요와 의전의 이해</span></a>
+<a href="02-national-symbols.html"><span class="no">Ⅱ</span><span>국가상징과 국민의례</span></a>
+<a href="03-protocol-seating.html"><span class="no">Ⅲ</span><span>의전예우 기준과 좌석배치</span></a>
+<a href="04-event-planning.html"><span class="no">Ⅳ</span><span>행사 준비와 진행 절차</span></a>
+<a href="05-official-events.html"><span class="no">Ⅴ</span><span>공식행사 시행절차</span></a>
+<a href="06-meetings.html"><span class="no">Ⅵ</span><span>회의 운영 의전</span></a>
+<a href="07-speeches.html" class="on"><span class="no">Ⅶ</span><span>각종 식사(式辭)의 작성</span></a>
+<ul class="toc-in" id="toc-in"></ul>
+<a href="08-appendix.html"><span class="no">부록</span><span>참고자료 · 관계 법규</span></a>
+  </nav>
+  <div class="navfoot">본 매뉴얼은 참고용 기준이며, 행사 성격과 여건에 맞게 적용한다.<br><button id="printbtn" type="button">이 장 인쇄</button></div>
+</aside>
+<main>
+<div class="mbar"><button id="mtoggle" type="button" aria-label="차례 열기">☰ 차례</button><b>Ⅶ 식사 작성</b></div>
+<div class="wrap">
+<header class="ch">
+  <div class="no">Ⅶ</div>
+  <h1>각종 식사(式辭)의 작성</h1>
+  <p>행사에서 하는 말씀은 행사의 성격과 말하는 사람의 위치에 따라 이름과 내용이 달라진다. 종류별 쓰임과 작성 요령을 정리한다.</p>
+</header>
+
+<h2 id="s1"><span class="n">1</span><span>한눈에 보는 식사의 종류</span></h2>
+<div class="tblw"><table>
+<thead><tr><th>종류</th><th>누가</th><th>어떤 행사에서</th><th>핵심 내용</th></tr></thead>
+<tbody>
+<tr><th>경축사 · 축사</th><td>주빈, 내빈</td><td>경축식, 개청·개관, 체육대회, 전시회, 졸업식</td><td>경축의 의의, 축하, 요망 사항</td></tr>
+<tr><th>기념사</th><td>행사 주최 인사(기관·단체장)</td><td>3·1절 기념식, 한글날 기념식, 창립·개원 기념식</td><td>역사적 의의와 과정, 우리의 각오</td></tr>
+<tr><th>식사(式辭)</th><td>의식의 주최자</td><td>시상식, 수료식, 기공·준공식, 개막식, 개청식</td><td>행사의 성격과 의의, 요망 사항</td></tr>
+<tr><th>치사(致辭)</th><td>주최자가 아닌 귀빈·외빈</td><td>창립 기념식, 준공식, 개청식, 개통식</td><td>잘한 일에 대한 치하, 공로에 대한 위로</td></tr>
+<tr><th>격려사</th><td>내부 행사는 기관장, 일반 행사는 귀빈·외빈</td><td>출전식, 발대식, 체육대회, 경기대회</td><td>한 일에 대한 감사, 앞으로 할 일에 대한 당부</td></tr>
+<tr><th>환영사</th><td>주최자, 개최지 기관장</td><td>대표단 방문, 체육대회, 세미나</td><td>참여에 대한 환영과 감사, 축원</td></tr>
+<tr><th>환송사 · 송별사</th><td>재직자, 학생 대표</td><td>송별회, 졸업식, 정년(명예)퇴임식, 출정식</td><td>공로의 찬양, 석별의 정, 축원</td></tr>
+<tr><th>답사</th><td>환송·축하·표창을 받은 사람</td><td>송별회, 졸업식, 퇴임식, 시상식</td><td>감사, 회고와 각오, 축원</td></tr>
+<tr><th>조사 · 추도사</th><td>—</td><td>장례식 / 추념 행사, 비 제막식</td><td>고인에 대한 추억과 추모</td></tr>
+<tr><th>훈시</th><td>상급자</td><td>직원회의, 교육, 수련회</td><td>직무상의 가르침, 주의 사항</td></tr>
+</tbody></table></div>
+<div class="co key"><b>모든 식사에 공통되는 요령</b>
+<ul>
+  <li>정중하게 예의를 갖춘다.</li>
+  <li>지나친 수식이나 과장을 피한다.</li>
+  <li>너무 길게 쓰지 않는다.</li>
+  <li><strong>낭독하기 좋게</strong> 쓴다 — 눈으로 읽는 글이 아니라 귀로 듣는 글이다.</li>
+  <li>앞뒤 인사를 잊지 않는다.</li>
+</ul></div>
+
+<h2 id="s2"><span class="n">2</span><span>경축사 및 축사</span></h2>
+<p><strong>경축사(慶祝辭)</strong>는 경축 행사에서 하는 글이다. 정부와 행정기관에서는 주로 광복절, 제헌절, 개천절 경축식에서 대통령, 국회의장 등이 경축사를 하여 왔다. <strong>축사(祝辭)</strong>는 일반적으로 축하의 뜻을 나타내는 행사에서 하는 축하의 글이다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>경축식의 의의와 과정, 요망 사항, 각오와 인사말을 쓴다.</li>
+  <li>정중하게 예의를 갖춘다.</li>
+  <li>지나친 수식이나 과장을 피한다.</li>
+  <li>너무 길게 쓰지 않는다.</li>
+  <li>낭독하기 좋도록 쓴다.</li>
+</ol></div>
+
+<h2 id="s3"><span class="n">3</span><span>기념사</span></h2>
+<p><strong>기념사(記念辭)</strong>는 국가와 사회, 기관·단체에 기념할 일이 있을 때 기념의 뜻을 표시하는 글로, 주로 행사를 주최하는 인사(기관·단체장)가 한다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>기념식의 역사적 의의와 과정, 우리의 각오, 요망 사항과 인사말을 쓴다.</li>
+  <li>예의를 갖춘다.</li>
+  <li>지나친 수식이나 과장을 피한다.</li>
+  <li>낭독하기 좋도록 쓴다.</li>
+</ol></div>
+
+<h2 id="s4"><span class="n">4</span><span>식사</span></h2>
+<p><strong>식사(式辭)</strong>는 일반적으로 각종 의식 행사의 주최자가 한다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>행사의 성격과 의의, 요망 사항, 인사말을 쓴다.</li>
+  <li>예의를 갖춘다.</li>
+  <li>지나친 수식이나 과장을 피하고 낭독하기 좋게 쓴다.</li>
+  <li>가급적 길지 않게 쓰며, 식사 낭독 뒤에 윗사람의 치사 등이 있을 때에는 더 유의한다.</li>
+</ol></div>
+
+<h2 id="s5"><span class="n">5</span><span>치사</span></h2>
+<p><strong>치사(致辭)</strong>는 치하의 뜻을 나타내는 글로, 잘한 일에 대한 치하, 공로에 대한 위로, 업적에 대한 찬양을 담는다. 주로 주최자가 아닌 귀빈 또는 외빈이 한다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>먼저 인사를 하고, 이어서 잘한 일에 대한 치하, 공로에 대한 위로, 업적에 대한 찬양을 담는다.</li>
+  <li>예의를 갖춘다.</li>
+  <li>이해하기 쉽게 쓰고 과장이나 수식을 피한다.</li>
+</ol></div>
+
+<h2 id="s6"><span class="n">6</span><span>격려사</span></h2>
+<p><strong>격려사(激勵辭)</strong>는 격려를 하기 위한 글로, 장도에 오르는 선수나 대회 참석자의 활약을 북돋우는 데 주로 쓰인다. 내부 행사에서는 기관장이, 일반 행사에서는 주로 귀빈 또는 외빈이 한다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>인사를 하고, 한 일에 대한 감사와 앞으로 할 일에 대한 당부를 한 다음 끝인사로 맺는다.</li>
+  <li>지나친 수식을 피하고 간명하게 쓴다.</li>
+  <li>핵심을 잃지 않고 격려할 말을 쓴다.</li>
+  <li>앞뒤 인사를 잊지 않는다.</li>
+</ol></div>
+
+<h2 id="s7"><span class="n">7</span><span>환영사</span></h2>
+<p><strong>환영사(歡迎辭)</strong>는 대표단 방문이나 대회 개최 때 다른 지역·외국의 선수나 참석 인사에게 환영의 뜻을 표하는 글로, 주로 주최자나 개최지 기관장이 한다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>참여에 대한 환영과 감사, 격려, 건강 등에 대한 축원을 밝힌다.</li>
+  <li>예의를 갖추고 알기 쉽게 쓴다.</li>
+  <li>지나친 수식을 피하고 핵심을 잃지 않게 쓴다.</li>
+  <li>길지 않게, 낭독하기 좋게 쓴다.</li>
+  <li>앞뒤 인사를 잊지 않는다.</li>
+</ol></div>
+
+<h2 id="s8"><span class="n">8</span><span>환송사·송별사와 답사</span></h2>
+<h3>환송사(송별사)</h3>
+<p>송별회, 졸업식, 출정식 등에서 재직자 또는 학생 대표가 석별의 뜻을 표하는 글이다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>인사말, 공로의 찬양, 석별의 정, 자신들의 각오, 가는 이의 건강과 행복에 대한 축원을 골자로 쓴다.</li>
+  <li>출정식 등에서는 석별의 정과 함께 축하의 내용을 담는다.</li>
+  <li>예의를 갖추고 알기 쉽게 쓴다.</li>
+  <li>너무 길지 않게, 읽기 좋게 쓴다.</li>
+</ol></div>
+<h3>답사</h3>
+<p>환송사에 대한 대답의 뜻을 나타내는 글이며, 축사나 표창을 받은 사람이 감사의 뜻을 표하는 글이기도 하다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>어떤 경우든 고맙다는 인사와 주최 측에 대한 감사, 자신의 회고와 각오, 하객의 건강과 행복에 대한 축원을 담는다.</li>
+  <li>예의를 갖추고 알기 쉽게 쓴다.</li>
+  <li>낭독하기 좋게 쓴다.</li>
+</ol></div>
+
+<h2 id="s9"><span class="n">9</span><span>조사 및 추도사</span></h2>
+<p><strong>조사(弔辭)</strong>는 죽음을 슬퍼하며 조상하는 글이고, <strong>추도사(追悼辭)</strong>는 고인의 기일 등을 맞아 고인을 되새기며 명복을 비는 글이다. 조사는 장례식에서, 추도사는 추념 행사나 비 제막식 등에서 한다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>과거를 추억하며 지난날의 두터웠던 정을 나타낸다.</li>
+  <li>고인의 인간성, 기대했던 장래성, 재주와 공적, 그리고 슬픈 심정을 담는다.</li>
+  <li>어려운 구절이나 감상적인 어구를 너무 많이 쓰지 않는다.</li>
+  <li>지나친 과장으로 슬픔을 꾸미지 말고 진심에서 우러나오는 말로 쓴다.</li>
+  <li>경건한 마음으로 정중하게 쓴다.</li>
+</ol></div>
+
+<h2 id="s10"><span class="n">10</span><span>훈시</span></h2>
+<p><strong>훈시(訓示)</strong>는 주로 직무상의 가르침이나 주의 사항을 전하는 글이다.</p>
+<div class="co"><b>작성 요령</b>
+<ol>
+  <li>먼저 인사를 하고 격려나 칭송의 말을 한 뒤, 권고와 당부를 하고 마무리 인사를 쓴다.</li>
+  <li>쉬운 말로 간명하게 쓴다.</li>
+  <li>지나친 수식이나 과장을 피한다.</li>
+</ol></div>
+
+<h2 id="s11"><span class="n">11</span><span>교육감 말씀자료 작성 실무</span></h2>
+<p>교육감이 행사에서 하실 인사말씀, 축사, 격려사 등은 주관 부서가 초안을 작성하고 비서실의 확인을 받는다(<a href="04-event-planning.html#s2">Ⅳ장 교육감 참석 행사 사전 준비</a>).</p>
+<ul>
+  <li><strong>호명 명단</strong>: 말씀 중 호명할 주요 인사는 당일 참석 여부를 다시 확인하여 반영한다. 호명 순서는 외부 인사를 먼저, 내부 인사를 나중에 한다.</li>
+  <li><strong>참석의 의미</strong>: 행사의 주제와 교육감이 이 행사에 참석하는 의미가 드러나게 쓴다.</li>
+  <li><strong>사실 확인</strong>: 현황·통계는 출처와 기준일을 확인하고, 초안에 근거 자료를 붙인다.</li>
+  <li><strong>정책 연결</strong>: 행사와 관련된 우리 교육청 정책의 진전 상황과 계획을 담는다.</li>
+  <li><strong>분량</strong>: 본행사에 지장을 주지 않도록 짧게 쓴다. 문화·체육 행사에서는 말씀 순서 자체를 생략하거나 줄이는 방안을 먼저 검토한다.</li>
+  <li><strong>예비본</strong>: 연설문은 2부를 준비한다(1부는 예비).</li>
+</ul>
+<p class="src">출처: 「광주교육 의전·행사 매뉴얼」(2023. 5.) Ⅵ, Ⅳ-2, Ⅳ-3</p>
+
+<div class="pn"><a href="06-meetings.html"><small>← 이전</small><b>Ⅵ 회의 운영 의전</b></a><a class="nx" href="08-appendix.html"><small>다음 →</small><b>부록 참고자료 · 관계 법규</b></a></div>
+<footer class="ft">전남광주통합특별시교육청 의전·행사 매뉴얼(안) · 2026. 11. 작성 · 「광주교육 의전·행사 매뉴얼」(2023. 5.) 및 행정안전부 「2024 정부의전편람」(2024. 8.) 제2장·제6장을 바탕으로 재구성</footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var b=document.body;
+  var t=document.getElementById('mtoggle');
+  if(t)t.addEventListener('click',function(){b.classList.toggle('open')});
+  document.querySelector('aside.nav').addEventListener('click',function(e){if(e.target.closest('a'))b.classList.remove('open')});
+  document.addEventListener('click',function(e){if(b.classList.contains('open')&&!e.target.closest('aside.nav')&&!e.target.closest('#mtoggle'))b.classList.remove('open')});
+  // in-page toc
+  var ul=document.getElementById('toc-in');
+  if(ul){var hs=document.querySelectorAll('main h2');hs.forEach(function(h,i){if(!h.id)h.id='s'+(i+1);var li=document.createElement('li');var a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent.replace(/^\s*\d+\s*/,'');li.appendChild(a);ul.appendChild(li)});if(!hs.length)ul.remove()}
+  // checklists
+  var key='jgedu-protocol:'+location.pathname.split('/').pop();
+  var st={};try{st=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+  var boxes=document.querySelectorAll('.cl input[type=checkbox]');
+  function save(){try{localStorage.setItem(key,JSON.stringify(st))}catch(e){}}
+  function count(){document.querySelectorAll('[data-cl]').forEach(function(bar){var g=document.getElementById(bar.getAttribute('data-cl'));if(!g)return;var a=g.querySelectorAll('input').length,c=g.querySelectorAll('input:checked').length;bar.querySelector('.cnt').textContent=c+' / '+a+' 확인'})}
+  boxes.forEach(function(x,i){x.dataset.i=i;if(st[i])x.checked=true;x.addEventListener('change',function(){st[i]=x.checked?1:0;save();count()})});
+  document.querySelectorAll('[data-reset]').forEach(function(btn){btn.addEventListener('click',function(){var g=document.getElementById(btn.getAttribute('data-reset'));g.querySelectorAll('input').forEach(function(x){x.checked=false;st[x.dataset.i]=0});save();count()})});
+  count();
+  var p=document.getElementById('printbtn');if(p)p.addEventListener('click',function(){window.print()});
+})();
+</script>
+</body>
+</html>

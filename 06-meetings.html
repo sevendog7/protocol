@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ⅵ 회의 운영 의전 — 의전·행사 매뉴얼</title>
+<style>
+:root{
+  --paper:#f5f3ee; --surface:#ffffff; --ink:#1b2430; --ink2:#3d4854; --muted:#66717d;
+  --line:#dcd8cf; --line2:#bfb9ac;
+  --navy:#12354a; --navy2:#1d4f6b; --navy-soft:#e6eef2;
+  --amber:#a8611c; --amber-soft:#f7ecdd;
+  --red:#a33a2c; --red-soft:#f8e9e5;
+  --green:#2c6b4f; --green-soft:#e5f1ea;
+  --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",sans-serif;
+  --serif:"Noto Serif KR","Nanum Myeongjo","KoPub Batang","Batang","바탕",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere;-webkit-text-size-adjust:100%}
+a{color:var(--navy2)}
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+aside.nav{background:var(--navy);color:#dbe6ec;position:sticky;top:0;height:100vh;overflow-y:auto;padding:26px 0 30px}
+.brand{padding:0 24px 20px;border-bottom:1px solid rgba(255,255,255,.14)}
+.brand small{display:block;font-size:12px;letter-spacing:.08em;color:#9fb6c2}
+.brand b{display:block;font-family:var(--serif);font-size:19px;line-height:1.4;color:#fff;margin-top:6px;font-weight:700}
+.brand span{display:inline-block;margin-top:10px;font-size:11.5px;border:1px solid rgba(255,255,255,.35);border-radius:3px;padding:1px 7px;color:#e8d3b5}
+nav.chap{padding:14px 12px 0}
+nav.chap a{display:flex;gap:10px;align-items:baseline;padding:8px 12px;border-radius:6px;color:#d2dfe6;text-decoration:none;font-size:14.5px;line-height:1.45}
+nav.chap a .no{flex:0 0 30px;font-family:var(--serif);color:#e0b77c;font-size:13.5px}
+nav.chap a:hover{background:rgba(255,255,255,.08)}
+nav.chap a.on{background:#fff;color:var(--navy);font-weight:700}
+nav.chap a.on .no{color:var(--amber)}
+.toc-in{margin:4px 12px 8px 52px;padding:0;list-style:none;border-left:1px solid rgba(255,255,255,.2)}
+.toc-in a{display:block;padding:3px 0 3px 12px;font-size:13px;color:#aebfca;text-decoration:none;line-height:1.5}
+.toc-in a:hover{color:#fff}
+.navfoot{margin:22px 24px 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;color:#93a9b5;line-height:1.6}
+.navfoot button{margin-top:10px;background:transparent;color:#dbe6ec;border:1px solid rgba(255,255,255,.35);border-radius:5px;padding:6px 12px;font:inherit;font-size:12.5px;cursor:pointer}
+.navfoot button:hover{background:rgba(255,255,255,.1)}
+main{min-width:0;padding:0 clamp(16px,5vw,64px) 80px}
+.wrap{max-width:880px;margin:0 auto}
+.mbar{display:none}
+header.ch{padding:54px 0 26px;border-bottom:3px double var(--line2);margin-bottom:34px}
+header.ch .no{font-family:var(--serif);font-size:15px;color:var(--amber);letter-spacing:.12em}
+header.ch h1{font-family:var(--serif);font-size:clamp(27px,4.2vw,38px);line-height:1.3;margin:8px 0 12px;color:var(--navy);font-weight:700;text-wrap:balance}
+header.ch p{margin:0;color:var(--ink2);max-width:66ch}
+h2{font-family:var(--serif);font-size:23px;color:var(--navy);margin:52px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line2);line-height:1.4;display:flex;gap:12px;align-items:baseline}
+h2 .n{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-size:15px;font-weight:700;transform:translateY(-2px)}
+h3{font-size:18px;margin:32px 0 8px;color:var(--ink);line-height:1.45}
+h3::before{content:"";display:inline-block;width:5px;height:16px;background:var(--amber);margin-right:9px;transform:translateY(2px)}
+h4{font-size:16px;margin:22px 0 6px;color:var(--navy2)}
+p{margin:8px 0 12px}
+ul,ol{margin:6px 0 14px;padding-left:22px}
+li{margin:3px 0}
+li>ul,li>ol{margin:3px 0 6px}
+strong{font-weight:700}
+.lead{font-size:17px;color:var(--ink2)}
+.tblw{overflow-x:auto;margin:14px 0 20px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.6}
+th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+tr>*:last-child{border-right:0} tbody tr:last-child>*{border-bottom:0}
+thead th{background:var(--navy-soft);color:var(--navy);font-weight:700;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line2)}
+tbody th{background:#faf8f4;font-weight:700;white-space:nowrap}
+td.c,th.c{text-align:center} td.nw{white-space:nowrap}
+table.num td:first-child{text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}
+caption{caption-side:top;text-align:left;padding:10px 12px 6px;font-weight:700;color:var(--ink2);font-size:14.5px}
+.co{border:1px solid var(--line);border-left:5px solid var(--navy2);background:var(--surface);border-radius:6px;padding:14px 18px;margin:16px 0}
+.co>b:first-child,.co>.t{display:block;font-size:13px;letter-spacing:.04em;color:var(--navy2);margin-bottom:4px;font-weight:700}
+.co p:last-child,.co ul:last-child,.co ol:last-child{margin-bottom:0}
+.co.key{border-left-color:var(--amber);background:var(--amber-soft)} .co.key>b:first-child{color:var(--amber)}
+.co.warn{border-left-color:var(--red);background:var(--red-soft)} .co.warn>b:first-child{color:var(--red)}
+.co.chk{border-left-color:var(--green);background:var(--green-soft)} .co.chk>b:first-child{color:var(--green)}
+.co.adapt{border-left-color:var(--navy);background:var(--navy-soft)} .co.adapt>b:first-child{color:var(--navy)}
+.src{font-size:13px;color:var(--muted);margin:6px 0 18px;padding-left:12px;border-left:2px solid var(--line2);line-height:1.6}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:14px 0 20px;background:var(--surface);font-size:14.5px;line-height:1.6}
+.cmp>div{padding:11px 14px;border-bottom:1px solid var(--line)}
+.cmp>div:nth-child(odd){border-right:1px solid var(--line);color:var(--ink2)}
+.cmp>div:nth-last-child(-n+2){border-bottom:0}
+.cmp>.h{font-weight:700;text-align:center;padding:9px}
+.cmp>.h.a{background:var(--red-soft);color:var(--red)} .cmp>.h.b{background:var(--green-soft);color:var(--green)}
+.cmp>div:nth-child(even):not(.h){font-weight:500}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0 20px}
+.flow>div{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--navy2);border-radius:6px;padding:12px 14px;font-size:14.5px;line-height:1.6}
+.flow>div b{display:block;color:var(--navy);margin-bottom:2px}
+.flow>div em{font-style:normal;display:inline-block;font-size:12.5px;color:var(--amber);font-weight:700;margin-bottom:4px}
+.order{list-style:none;padding:0;margin:14px 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:8px;counter-reset:o}
+.order>li{display:flex;gap:12px;align-items:baseline;padding:9px 16px;border-bottom:1px dashed var(--line);margin:0;counter-increment:o}
+.order>li:last-child{border-bottom:0}
+.order>li::before{content:counter(o);flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy-soft);color:var(--navy);font-size:12.5px;font-weight:700;display:inline-grid;place-items:center;transform:translateY(1px)}
+.order>li>span{flex:1}
+.order>li>i{font-style:normal;color:var(--muted);font-size:13.5px;text-align:right;flex:0 1 auto}
+.order small{display:block;color:var(--muted);font-size:13.5px;line-height:1.55}
+.cl{list-style:none;padding:0;margin:8px 0 18px}
+.cl li{margin:0;border-bottom:1px solid var(--line)}
+.cl label{display:flex;gap:10px;align-items:flex-start;padding:8px 4px;cursor:pointer;font-size:15px;line-height:1.6}
+.cl input{flex:none;width:18px;height:18px;margin-top:4px;accent-color:var(--navy2)}
+.cl input:checked+span{color:var(--muted);text-decoration:line-through}
+.cl small{color:var(--muted)}
+.clbar{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-top:18px}
+.clbar button{font:inherit;font-size:12.5px;background:var(--surface);border:1px solid var(--line2);border-radius:5px;padding:4px 10px;cursor:pointer;color:var(--ink2)}
+.dg{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 14px 12px;margin:14px 0 20px;text-align:center;overflow-x:auto}
+.dg figcaption,.dg .cap{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.55}
+.dg .ttl{font-size:14px;font-weight:700;color:var(--ink2);margin-bottom:12px}
+.dgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0 20px}
+.dgs .dg{margin:0}
+.row{display:flex;justify-content:center;gap:6px;margin:6px 0;flex-wrap:nowrap}
+.st{min-width:44px;height:40px;padding:0 8px;border:1.5px solid var(--line2);border-radius:6px;display:inline-grid;place-items:center;font-size:14px;font-weight:700;background:#fff;color:var(--ink2);white-space:nowrap}
+.st.vip{background:var(--navy);border-color:var(--navy);color:#fff}
+.st.sub{background:var(--amber-soft);border-color:#d9b98f;color:var(--amber)}
+.st.wide{min-width:150px}
+.st.ghost{border-style:dashed;color:var(--muted);font-weight:500}
+.pod{display:inline-block;margin-top:6px;padding:3px 26px;background:var(--ink2);color:#fff;border-radius:4px;font-size:13px}
+.aud{font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.06em}
+svg{max-width:100%;height:auto}
+svg text{font-family:var(--sans)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:12px 0 18px;font-size:15px}
+.kv dt{font-weight:700;color:var(--navy2)} .kv dd{margin:0}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:70px;padding-top:22px;border-top:1px solid var(--line2)}
+.pn a{flex:1;max-width:48%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;color:var(--ink)}
+.pn a small{display:block;color:var(--muted);font-size:12.5px}
+.pn a b{font-family:var(--serif);color:var(--navy)}
+.pn a.nx{text-align:right;margin-left:auto}
+.pn a:hover{border-color:var(--navy2)}
+footer.ft{margin-top:26px;font-size:12.5px;color:var(--muted);line-height:1.65}
+/* cover */
+.cover{padding:64px 0 34px;border-bottom:3px double var(--line2)}
+.cover .org{font-size:14px;letter-spacing:.14em;color:var(--amber);font-weight:700}
+.cover h1{font-family:var(--serif);font-size:clamp(34px,6vw,56px);line-height:1.22;color:var(--navy);margin:14px 0 10px;font-weight:700}
+.cover .sub{font-size:18px;color:var(--ink2);max-width:60ch}
+.cover .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 12px;font-size:13.5px;color:var(--ink2)}
+.cover .meta span{border:1px solid var(--line2);border-radius:4px;padding:3px 10px;background:var(--surface)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:18px 0 24px}
+.cards a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;transition:border-color .15s,transform .15s}
+.cards a:hover{border-color:var(--navy2);transform:translateY(-2px)}
+.cards a .no{font-family:var(--serif);color:var(--amber);font-size:14px;letter-spacing:.08em}
+.cards a b{display:block;font-family:var(--serif);font-size:18px;color:var(--navy);margin:2px 0 6px;line-height:1.4}
+.cards a span{font-size:13.5px;color:var(--muted);line-height:1.6;display:block}
+.motto{font-family:var(--serif);font-size:19px;line-height:1.7;color:var(--navy);border:1px solid var(--line2);background:var(--surface);border-radius:8px;padding:18px 22px;margin:22px 0;text-align:center;text-wrap:balance}
+@media (max-width:900px){
+  .layout{display:block}
+  aside.nav{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-102%);transition:transform .2s;z-index:30;height:100%}
+  body.open aside.nav{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.45)}
+  .mbar{display:flex;position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;align-items:center;gap:12px;padding:10px 16px;margin:0 calc(-1*clamp(16px,5vw,64px))}
+  .mbar button{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:5px;padding:4px 10px;font:inherit;font-size:14px}
+  .mbar b{font-family:var(--serif);font-size:15px}
+  header.ch{padding-top:34px}
+  html{scroll-padding-top:60px}
+  .cmp{grid-template-columns:1fr}
+  .cmp>.h.a,.cmp>.h.b{display:none}
+  .cmp>div:nth-child(odd){border-right:0;border-bottom:0;padding-bottom:2px;font-size:13.5px}
+  .cmp>div:nth-child(odd):not(.h)::before{content:"관행 ";color:var(--red);font-weight:700}
+  .cmp>div:nth-child(even):not(.h)::before{content:"개선 ";color:var(--green);font-weight:700}
+  .cmp>div:nth-last-child(2){border-bottom:0}
+  .pn{flex-direction:column}.pn a{max-width:none}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  aside.nav,.mbar,.pn,.clbar button,.noprint{display:none!important}
+  .layout{display:block} main{padding:0}
+  .wrap{max-width:none}
+  h2{break-after:avoid} h3{break-after:avoid}
+  .tblw,.dg,.co,.order,.cmp{break-inside:avoid;border-radius:0}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="nav">
+  <div class="brand"><small>전남광주통합특별시교육청</small><b>의전·행사 매뉴얼</b><span>2026. 11. (안)</span></div>
+  <nav class="chap" aria-label="차례">
+<a href="index.html"><span class="no">·</span><span>표지 · 요약 · 차례</span></a>
+<a href="01-overview.html"><span class="no">Ⅰ</span><span>매뉴얼 개요와 의전의 이해</span></a>
+<a href="02-national-symbols.html"><span class="no">Ⅱ</span><span>국가상징과 국민의례</span></a>
+<a href="03-protocol-seating.html"><span class="no">Ⅲ</span><span>의전예우 기준과 좌석배치</span></a>
+<a href="04-event-planning.html"><span class="no">Ⅳ</span><span>행사 준비와 진행 절차</span></a>
+<a href="05-official-events.html"><span class="no">Ⅴ</span><span>공식행사 시행절차</span></a>
+<a href="06-meetings.html" class="on"><span class="no">Ⅵ</span><span>회의 운영 의전</span></a>
+<ul class="toc-in" id="toc-in"></ul>
+<a href="07-speeches.html"><span class="no">Ⅶ</span><span>각종 식사(式辭)의 작성</span></a>
+<a href="08-appendix.html"><span class="no">부록</span><span>참고자료 · 관계 법규</span></a>
+  </nav>
+  <div class="navfoot">본 매뉴얼은 참고용 기준이며, 행사 성격과 여건에 맞게 적용한다.<br><button id="printbtn" type="button">이 장 인쇄</button></div>
+</aside>
+<main>
+<div class="mbar"><button id="mtoggle" type="button" aria-label="차례 열기">☰ 차례</button><b>Ⅵ 회의 운영</b></div>
+<div class="wrap">
+<header class="ch">
+  <div class="no">Ⅵ</div>
+  <h1>회의 운영 의전</h1>
+  <p>국가 최고 정책심의기구인 국무회의와 그 전심(前審) 단계인 차관회의의 운영 체계를 살펴보고, 여기에서 우리 교육청 주요 회의에 준용할 수 있는 운영 기준을 뽑아 정리한다.</p>
+</header>
+
+<div class="co"><b>이 장의 성격</b>앞부분(1~6)은 행정안전부 「2024 정부의전편람」 제6장을 요약한 참고 자료이고, 마지막 절(7)은 그 운영 원리를 우리 교육청 회의에 옮긴 준용 기준(안)이다. 편람은 2024년 8월 발간 당시 기준이며, 이후 정부조직 개편으로 부처 명칭, 구성원 수, 회의 장소 등이 달라졌다. 현행 사항은 「정부조직법」, 「국무회의 규정」, 「차관회의 규정」으로 확인한다.</div>
+
+<h2 id="s1"><span class="n">1</span><span>국무회의와 차관회의 개요</span></h2>
+<div class="tblw"><table>
+<thead><tr><th>구분</th><th>국무회의</th><th>차관회의</th></tr></thead>
+<tbody>
+<tr><th>성격</th><td>정부의 권한에 속하는 중요한 정책을 심의하는 <strong>헌법상 기관</strong></td><td>대통령령에 근거한 회의체. 국무회의에 제출된 의안과 국무회의에서 지시받은 사항을 심의하는 <strong>국무회의 전심 단계</strong></td></tr>
+<tr><th>근거</th><td>헌법 제88조·제89조, 정부조직법 제12조·제13조, 국무회의 규정(대통령령)</td><td>차관회의 규정(대통령령)</td></tr>
+<tr><th>구성</th><td>대통령(의장), 국무총리(부의장), 15인 이상 30인 이하의 국무위원</td><td>국무조정실장(의장), 각 부의 차관</td></tr>
+<tr><th>정례 회의</th><td>매주 1회(편람 기준 화요일 10:00)</td><td>매주 1회(편람 기준 목요일 10:00)</td></tr>
+<tr><th>임시 회의</th><td colspan="2">필요에 따라 그때그때 소집</td></tr>
+<tr><th>개의</th><td>구성원 과반수 출석</td><td>구성원 과반수 출석</td></tr>
+<tr><th>의결</th><td>출석 구성원 3분의 2 이상 찬성</td><td>출석 구성원 과반수 찬성</td></tr>
+<tr><th>실제 운영</th><td colspan="2">출석 구성원의 표결 없이 관례상 <strong>전원 합의제</strong>로 운영</td></tr>
+<tr><th>간사</th><td>행정안전부 의정관(국무회의의 서무 처리)</td><td>행정안전부 의정담당관</td></tr>
+<tr><th>회의 방식</th><td colspan="2">대면 또는 원격영상회의, 온-나라 국정관리시스템을 활용한 온라인 회의(노트북 회의)</td></tr>
+</tbody></table></div>
+<ul>
+  <li>심의를 요하는 각 부처의 안건은 원칙적으로 <strong>먼저 차관회의의 심의</strong>를 거치며, 여러 부처가 관련된 안건은 관련 부처와 <strong>사전 협의</strong>를 한 뒤 상정한다.</li>
+  <li>국무회의는 부처 수준의 의사결정과 달리 집단적 의사결정을 하는 기관으로, 다양한 견해와 이해관계가 표출되고 토의를 거쳐 정책 내용이 조정된다.</li>
+  <li>1948년 제헌 헌법에서 국무회의(국무원)는 의결기관이었으나, 1962년 제5차 개정 헌법에서 심의기관으로 바뀌어 현재에 이른다.</li>
+</ul>
+<p class="src">출처: 「2024 정부의전편람」 제6장 1., 2.(360~363쪽)</p>
+
+<h2 id="s2"><span class="n">2</span><span>회의 구성과 좌석 배치</span></h2>
+<h3>구성원과 배석자</h3>
+<ul>
+  <li><strong>국무회의</strong>: 의장이 사고로 직무를 수행할 수 없으면 부의장인 국무총리가, 의장과 부의장이 모두 직무를 수행할 수 없으면 「정부조직법」 제26조제1항에 규정된 순서에 따라 국무위원이 직무를 대행한다.</li>
+  <li><strong>배석자</strong>: 규정에 명시된 사람과 의장이 필요하다고 인정한 사람이 배석한다.</li>
+  <li><strong>차관회의</strong>: 의장이 부득이한 사유로 직무를 수행할 수 없으면 「정부조직법」 제26조제1항의 순위에 따른 차관이 직무를 대행한다.</li>
+</ul>
+<h3>좌석 배치 원칙</h3>
+<div class="tblw"><table>
+<thead><tr><th>탁자 형태</th><th>구성원 배치</th><th>배석자 배치</th></tr></thead>
+<tbody>
+<tr><th>라운드형(⊂⊃)</th><td>가운데 의장석을 중심으로 <strong>우측에 부의장(국무총리), 좌측에 그다음 순위</strong>를 배치하고, 의장석 맞은편에도 다음 순위자를 둔 뒤, 정부조직법상 각 부의 순서에 따라 'ㅁ'자 방향으로 교차 배치</td><td>구성원 배치 이후 'ㅁ'자로, 소속과 직급 순으로 교차 배치</td></tr>
+<tr><th>U자형</th><td>가운데 의장석을 중심으로 우측에 부의장, 좌측에 그다음 순위를 배치하고, 각 부의 순서에 따라 <strong>우측 → 좌측으로 교차</strong> 배치</td><td>구성원 배치 이후 우측, 좌측 방향으로 교차 배치</td></tr>
+</tbody></table></div>
+<p>장소 등 상황에 따라 변경하여 배치할 수 있다.</p>
+<h3>소집과 개최 장소</h3>
+<ul>
+  <li>의장이 회의를 소집하고 주재한다. 국무위원은 국무회의의 소집을 요구할 수 있다.</li>
+  <li>구성원이 동영상과 음성이 동시에 송수신되는 장치가 갖추어진 서로 다른 장소에 출석하여 진행하는 <strong>원격영상회의</strong> 방식으로 할 수 있으며, 이 경우 구성원은 <strong>동일한 회의장에 출석한 것으로 본다</strong>(국무회의 규정 제6조제2항).</li>
+  <li>중앙행정기관의 세종시 이전과 감염병 대응 등을 계기로, 행정 효율화를 위해 여러 청사를 연결하는 영상 회의를 적극 활용하고 있다.</li>
+</ul>
+<p class="src">출처: 「2024 정부의전편람」 제6장 2. 가.(363~365쪽)</p>
+
+<h2 id="s3"><span class="n">3</span><span>의사 진행</span></h2>
+<h3>의사 진행 순서(국무회의)</h3>
+<ol class="order">
+  <li><span>참석자 입장</span></li>
+  <li><span>국민의례<small>국기에 대한 경례 — 간사의 안내에 따라</small></span><i>국가 주악</i></li>
+  <li><span>개의 선포 · 모두 말씀<small>의사봉 3타</small></span><i>의장</i></li>
+  <li><span>의안 심의 및 부처 보고</span><i>사회: 부의장</i></li>
+  <li><span>각 부처 공지 사항 및 부의장 말씀</span><i>사회: 부의장</i></li>
+  <li><span>마무리 말씀 · 산회 선포<small>의사봉 3타</small></span><i>의장</i></li>
+</ol>
+<h3>대리 출석</h3>
+<ul>
+  <li><strong>국무회의</strong>: 국무위원이 참석하지 못할 때에는 그 부의 차관이 대리 출석한다. 대리 출석한 차관은 관계 의안에 관하여 <strong>발언할 수 있으나 표결에는 참가할 수 없다.</strong></li>
+  <li><strong>차관회의</strong>: 참석하지 못할 때에는 바로 하위 직위에 있는 사람이 대리 출석한다. 발언할 수 있으나 표결에는 참가할 수 없다.</li>
+  <li><strong>보충 설명</strong>: 의안에 관하여 보충 설명이 필요하면 그 의안을 제출한 부·처의 일정 직급 이상 공무원이 설명하게 할 수 있다.</li>
+</ul>
+<p class="src">출처: 「2024 정부의전편람」 제6장 2. 나.(366쪽)</p>
+
+<h2 id="s4"><span class="n">4</span><span>의안의 종류와 작성</span></h2>
+<h3>의안의 종류</h3>
+<p>국무회의 의안은 헌법 제89조의 17개 심의 사항, 개별 법령에 명기된 심의·보고 사항, 「국무회의 규정」 제3조제6항의 보고 사항으로 이루어지며, 형식상 헌법 개정안, 법률 공포안, 법률안, 대통령령안, 일반안, 보고안, 부처 보고 등으로 구분한다.</p>
+<div class="co"><b>국무회의 규정상 보고 사항(제3조제6항)</b>
+<ol>
+  <li>국내외 중요 정보의 분석 상황</li>
+  <li>정부의 역점 사업 추진 현황</li>
+  <li>국민 생활에 영향을 미치는 중요 시책의 추진 현황</li>
+  <li>대국민 홍보를 적극적으로 하여야 할 중요 사항</li>
+  <li>부·처 간의 협조가 필요한 사항</li>
+  <li>대통령 및 국무총리의 지시 사항</li>
+</ol></div>
+
+<h3>의결 형식</h3>
+<div class="tblw"><table>
+<thead><tr><th>유형</th><th>의미</th></tr></thead>
+<tbody>
+<tr><th>원안 의결</th><td>제안 부처의 원안대로 처리</td></tr>
+<tr><th>수정 의결</th><td>의안 중 일부를 수정하여 처리</td></tr>
+<tr><th>보류</th><td>의결을 다음 회의로 연기</td></tr>
+</tbody></table></div>
+<p>'원안'은 차관회의에 <strong>처음 상정한 의안</strong>을 말한다. 따라서 차관회의에서 수정한 대로 국무회의에서 의결하면 의결 형식은 원안 의결이 아니라 수정 의결이 된다. 원안이 대폭 수정되어 본질적 변경이 불가피하면 수정안으로 처리하지 않고 <strong>철회한 뒤 새로 상정</strong>한다.</p>
+
+<h3>의안의 작성</h3>
+<div class="tblw"><table>
+<thead><tr><th>구분</th><th>내용</th></tr></thead>
+<tbody>
+<tr><th>표지</th><td>의안 번호, 의결(보고) 연월일과 회차, 제목, 제출자, 제출 연월일</td></tr>
+<tr><th>의결서 본문</th><td>1. 의결 주문(보고안은 보고 주문) → 2. 제안 이유 → 3. 주요 내용 → 4. 주요 토의 과제 → 5. 참고 사항(관계 법령, 예산 조치, 합의, 기타, 별지)</td></tr>
+<tr><th>부처 보고 표지</th><td>회의명, 제목, 연월일, 부처명</td></tr>
+<tr><th>소관 표시</th><td>모든 의안은 마지막 쪽 안쪽 중앙에 <strong>소관 부서명과 연락처</strong>를 기재</td></tr>
+<tr><th>규격</th><td>A4, 양면 인쇄, 상철. 한글로 작성하되 필요한 경우 괄호 안에 한자 등 외국어를 넣을 수 있음</td></tr>
+<tr><th>글자 크기</th><td>의안 — 제목 17pt, 항목 15pt, 내용 14pt / 부처 보고 — 제목 26pt, 항목 15pt, 내용 14pt(신명조 기준)</td></tr>
+</tbody></table></div>
+<p class="src">출처: 「2024 정부의전편람」 제6장 2. 다.(367~372쪽), 3. 가. 3)·4)(379쪽)</p>
+
+<h2 id="s5"><span class="n">5</span><span>의안 상정에서 공포까지</span></h2>
+<div class="flow">
+  <div><em>1</em><b>의안 제출</b>각 부처가 차관회의 개최일 <strong>3일 전까지</strong> 의안을 제출(시스템 등록). 법령안은 법제처를 경유.</div>
+  <div><em>2</em><b>접수 · 의사일정</b>간사 부서(행정안전부 의정담당관실)가 접수하고 의사일정을 작성하여 각 부처에 공지.</div>
+  <div><em>3</em><b>차관회의</b>심의 후 회의록 작성·공개.</div>
+  <div><em>4</em><b>국무회의</b>심의 후 회의록 작성·공개.</div>
+  <div><em>5</em><b>부서 · 재가</b>관계 국무위원과 국무총리의 부서(副署)를 거쳐 대통령 재가.</div>
+  <div><em>6</em><b>국회 제출 · 공포</b>법률안은 국회 제출, 대통령령 등은 관보 게재로 공포.</div>
+</div>
+<ul>
+  <li><strong>사전 공유</strong>: 관련 자료를 회의 전주에 시스템의 의안 공유방에 게시하여 다른 부처가 미리 검토할 수 있게 한다.</li>
+  <li><strong>즉석 안건</strong>: 제출 기한 이후에 내는 안건은 즉석 안건으로 상정될 수 있으나, 다른 부처가 검토할 시간을 갖지 못하므로 바람직하지 않다. 간사 부서 등의 합의에 따라 <strong>극히 예외적인 경우에만</strong> 허용된다.</li>
+  <li><strong>전심 생략</strong>: 법률 공포안, 인사 발령안 등과 긴급한 의안은 차관회의를 거치지 않고 곧바로 국무회의에 상정할 수 있다.</li>
+  <li><strong>제안 설명</strong>: 상정 의안의 제안 설명은 주관 기관의 장이 한다.</li>
+  <li><strong>부서(副署)</strong>: 대통령의 국법상 행위는 문서로 하며 이 문서에는 국무총리와 관계 국무위원이 부서한다(헌법 제82조). 대리 참석자의 대리 부서는 허용되지 않는다.</li>
+  <li><strong>공포</strong>: 법령의 공포일은 그 법령을 게재한 관보가 발행된 날이며, 대통령령·총리령·부령은 특별한 규정이 없으면 공포한 날부터 20일이 지나면 효력이 발생한다. 국회에서 이송된 법률안은 15일 이내에 공포하거나 재의를 요구한다(헌법 제53조).</li>
+</ul>
+<p class="src">출처: 「2024 정부의전편람」 제6장 2. 다.(373~374쪽), 3.(375~398쪽)</p>
+
+<h2 id="s6"><span class="n">6</span><span>온라인 회의 시스템</span></h2>
+<p>국무회의와 차관회의는 온-나라 국정관리시스템의 국무·차관회의 시스템으로 운영한다. 의안 제출에서 회의, 재가까지 한 시스템에서 처리하며, 회의장에서는 노트북으로 의안을 열람한다.</p>
+<div class="tblw"><table>
+<thead><tr><th>단계</th><th>내용</th></tr></thead>
+<tbody>
+<tr><th>권한 신청</th><td>사용자가 업무 권한을 신청하고 승인받아 사용</td></tr>
+<tr><th>문서관리카드 작성</th><td>문서 요지는 <strong>추진 배경 + 추진 경과 + 주요 내용 + 기대 효과 + 쟁점 사항</strong>으로 구성</td></tr>
+<tr><th>의안 공유방 등록</th><td>회의 전 관련 부처가 미리 검토할 수 있도록 자료 게시</td></tr>
+<tr><th>의안 등록</th><td>부처 회의 담당자가 접수 대기함에서 상정 의안을 등록</td></tr>
+<tr><th>참석자 등록</th><td>참석·대리 참석 여부를 사전 등록(의장은 대리 참석을 선택할 수 없음)</td></tr>
+<tr><th>의사일정 조회 · 회의</th><td>의사일정 문서 열람, 심의 안건과 부처 보고를 구분하여 조회</td></tr>
+<tr><th>재가</th><td>재가 문서 작성 → 상신 → 부서(전자서명) → 사후 처리</td></tr>
+</tbody></table></div>
+<p class="src">출처: 「2024 정부의전편람」 제6장 4.(399~423쪽)</p>
+
+<h2 id="s7"><span class="n">7</span><span>우리 교육청 주요 회의 준용 기준(안)</span></h2>
+<div class="co adapt"><b>통합청 적용</b>국무회의·차관회의의 운영 원리 가운데 우리 교육청의 간부회의 등 주요 회의에 옮겨 쓸 수 있는 사항을 정리하였다. 두 부교육감 체제와 분산된 청사, 넓은 관할 구역이라는 통합청 여건에서 특히 <strong>사전 조정, 제출 기한, 원격영상회의</strong>의 원리가 유용하다. 아래는 준용 기준(안)이며, 회의별 구성원·주기·명칭은 내부 회의 운영 방침으로 정한다.</div>
+
+<div class="tblw"><table>
+<thead><tr><th>항목</th><th>정부 회의의 원리</th><th>우리 교육청 회의 준용(안)</th></tr></thead>
+<tbody>
+<tr><th>2단계 심의</th><td>차관회의(전심) → 국무회의</td><td>여러 실·국이 관련된 안건은 실무 조정 단계를 먼저 거친 뒤 교육감 주재 회의에 올린다. 관련 부서와의 사전 협의를 상정의 전제로 한다.</td></tr>
+<tr><th>제출 기한</th><td>회의 3일 전까지 제출, 전주에 자료 사전 공유</td><td>회의 자료 제출 기한을 정하고 지킨다. 기한 이후의 즉석 안건은 긴급한 경우로 한정한다.</td></tr>
+<tr><th>간사</th><td>행정안전부 의정관·의정담당관</td><td>회의 주관 부서가 접수, 의사일정 작성·공지, 좌석 배치, 회의록을 일괄 관리한다.</td></tr>
+<tr><th>좌석 배치</th><td>의장 중심, 우 → 좌 교차, 법정 직제순</td><td>주재자를 중심으로 조례상 직제순(부교육감 → 기획조정실장 → 국장 …)으로 우 → 좌 교차 배치한다. 형태는 <a href="03-protocol-seating.html#s7">Ⅲ장 회의 좌석배치</a>의 U자형·장방형을 따른다. 명패는 양면에 직위를 적는다.</td></tr>
+<tr><th>국민의례</th><td>국기에 대한 경례</td><td>월 단위 이하로 여는 정례회의는 「국민의례 규정」의 <strong>약식절차</strong>를 적용할 수 있다. 회의실 전면 왼쪽(깃대형) 또는 전면 중앙(게시형)에 실물 국기를 둔다.</td></tr>
+<tr><th>진행 순서</th><td>개의 → 모두 말씀 → 의안 심의·보고 → 공지 → 마무리 말씀 → 산회</td><td>개회 → 주재자 말씀 → 안건 심의·부서 보고 → 공지 사항 → 마무리 말씀 → 폐회</td></tr>
+<tr><th>대리 참석</th><td>바로 하위 직위자가 대리, 발언 가능·표결 불가</td><td>구성원이 참석하지 못할 때에는 바로 하위 직위자가 대리 참석하며, 대리 참석 여부를 간사 부서에 사전 통보한다.</td></tr>
+<tr><th>자료 구성</th><td>의결 주문 → 제안 이유 → 주요 내용 → 토의 과제 → 참고 사항</td><td>안건 자료는 결론(요청 사항)을 먼저 쓰고, 배경, 주요 내용, 쟁점, 참고 사항 순으로 구성한다. 마지막 쪽에 담당 부서와 연락처를 적는다.</td></tr>
+<tr><th>원격영상회의</th><td>서로 다른 장소에서 출석해도 동일한 회의장에 출석한 것으로 봄</td><td>청사 간, 본청과 교육지원청 간 회의는 영상회의를 기본 수단으로 검토한다. 이동 시간과 과다한 수행 인원을 줄이는 것 자체가 Ⅰ장의 의전 원칙에 부합한다.</td></tr>
+<tr><th>회의록</th><td>회의록 작성·공개</td><td>결정 사항과 후속 조치(담당 부서, 기한)를 회의록으로 남기고 공유한다.</td></tr>
+</tbody></table></div>
+
+<h3>영상회의를 진행할 때의 의전</h3>
+<ul>
+  <li>각 회의장의 화면 구도에 주재자와 발언자가 잘 보이도록 좌석과 카메라를 배치한다.</li>
+  <li>연결 상태와 음향은 회의 시작 전에 모든 회의장이 함께 시험한다.</li>
+  <li>국민의례를 실시하는 경우 회의장마다 실물 국기를 두고, 각 회의장의 국기를 향해 실시한다.</li>
+  <li>발언 순서는 주재 회의장 → 연결 회의장 순으로 하되, 직제순을 따르고 사회자가 회의장을 지명하여 혼선을 막는다.</li>
+  <li>자료는 사전에 전자 파일로 공유하여 회의장마다 같은 자료를 보도록 한다.</li>
+</ul>
+<div class="co warn"><b>확인 필요</b>우리 교육청 회의의 명칭·구성원·개최 주기·의결 방식은 이 매뉴얼의 범위 밖이며, 근거 규정이나 내부 방침이 따로 있는 회의(법정 위원회 등)는 그 규정이 우선한다.</div>
+
+<div class="clbar" data-cl="cl-m"><span>회의 준비 점검 · <span class="cnt"></span></span><button type="button" data-reset="cl-m">초기화</button></div>
+<ul class="cl" id="cl-m">
+  <li><label><input type="checkbox"><span>안건별로 관련 부서와 사전 협의가 끝났는가</span></label></li>
+  <li><label><input type="checkbox"><span>자료가 제출 기한 내에 접수되어 참석자에게 미리 공유되었는가</span></label></li>
+  <li><label><input type="checkbox"><span>의사일정(안건 순서, 보고자, 소요 시간)을 공지하였는가</span></label></li>
+  <li><label><input type="checkbox"><span>참석·대리 참석 여부를 확인하고 좌석 배치와 명패를 조정하였는가</span></label></li>
+  <li><label><input type="checkbox"><span>국기 위치와 국민의례 절차(약식 여부)를 정하였는가</span></label></li>
+  <li><label><input type="checkbox"><span>영상회의 연결, 음향, 화면 구도를 사전에 시험하였는가</span></label></li>
+  <li><label><input type="checkbox"><span>회의록 작성자와 후속 조치 관리 방법을 정하였는가</span></label></li>
+</ul>
+
+<div class="pn"><a href="05-official-events.html"><small>← 이전</small><b>Ⅴ 공식행사 시행절차</b></a><a class="nx" href="07-speeches.html"><small>다음 →</small><b>Ⅶ 각종 식사(式辭)의 작성</b></a></div>
+<footer class="ft">전남광주통합특별시교육청 의전·행사 매뉴얼(안) · 2026. 11. 작성 · 「광주교육 의전·행사 매뉴얼」(2023. 5.) 및 행정안전부 「2024 정부의전편람」(2024. 8.) 제2장·제6장을 바탕으로 재구성</footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var b=document.body;
+  var t=document.getElementById('mtoggle');
+  if(t)t.addEventListener('click',function(){b.classList.toggle('open')});
+  document.querySelector('aside.nav').addEventListener('click',function(e){if(e.target.closest('a'))b.classList.remove('open')});
+  document.addEventListener('click',function(e){if(b.classList.contains('open')&&!e.target.closest('aside.nav')&&!e.target.closest('#mtoggle'))b.classList.remove('open')});
+  // in-page toc
+  var ul=document.getElementById('toc-in');
+  if(ul){var hs=document.querySelectorAll('main h2');hs.forEach(function(h,i){if(!h.id)h.id='s'+(i+1);var li=document.createElement('li');var a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent.replace(/^\s*\d+\s*/,'');li.appendChild(a);ul.appendChild(li)});if(!hs.length)ul.remove()}
+  // checklists
+  var key='jgedu-protocol:'+location.pathname.split('/').pop();
+  var st={};try{st=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+  var boxes=document.querySelectorAll('.cl input[type=checkbox]');
+  function save(){try{localStorage.setItem(key,JSON.stringify(st))}catch(e){}}
+  function count(){document.querySelectorAll('[data-cl]').forEach(function(bar){var g=document.getElementById(bar.getAttribute('data-cl'));if(!g)return;var a=g.querySelectorAll('input').length,c=g.querySelectorAll('input:checked').length;bar.querySelector('.cnt').textContent=c+' / '+a+' 확인'})}
+  boxes.forEach(function(x,i){x.dataset.i=i;if(st[i])x.checked=true;x.addEventListener('change',function(){st[i]=x.checked?1:0;save();count()})});
+  document.querySelectorAll('[data-reset]').forEach(function(btn){btn.addEventListener('click',function(){var g=document.getElementById(btn.getAttribute('data-reset'));g.querySelectorAll('input').forEach(function(x){x.checked=false;st[x.dataset.i]=0});save();count()})});
+  count();
+  var p=document.getElementById('printbtn');if(p)p.addEventListener('click',function(){window.print()});
+})();
+</script>
+</body>
+</html>

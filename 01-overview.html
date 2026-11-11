@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ⅰ 매뉴얼 개요와 의전의 이해 — 의전·행사 매뉴얼</title>
+<style>
+:root{
+  --paper:#f5f3ee; --surface:#ffffff; --ink:#1b2430; --ink2:#3d4854; --muted:#66717d;
+  --line:#dcd8cf; --line2:#bfb9ac;
+  --navy:#12354a; --navy2:#1d4f6b; --navy-soft:#e6eef2;
+  --amber:#a8611c; --amber-soft:#f7ecdd;
+  --red:#a33a2c; --red-soft:#f8e9e5;
+  --green:#2c6b4f; --green-soft:#e5f1ea;
+  --sans:"Pretendard","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",sans-serif;
+  --serif:"Noto Serif KR","Nanum Myeongjo","KoPub Batang","Batang","바탕",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.75;word-break:keep-all;overflow-wrap:anywhere;-webkit-text-size-adjust:100%}
+a{color:var(--navy2)}
+.layout{display:grid;grid-template-columns:280px minmax(0,1fr);min-height:100vh}
+aside.nav{background:var(--navy);color:#dbe6ec;position:sticky;top:0;height:100vh;overflow-y:auto;padding:26px 0 30px}
+.brand{padding:0 24px 20px;border-bottom:1px solid rgba(255,255,255,.14)}
+.brand small{display:block;font-size:12px;letter-spacing:.08em;color:#9fb6c2}
+.brand b{display:block;font-family:var(--serif);font-size:19px;line-height:1.4;color:#fff;margin-top:6px;font-weight:700}
+.brand span{display:inline-block;margin-top:10px;font-size:11.5px;border:1px solid rgba(255,255,255,.35);border-radius:3px;padding:1px 7px;color:#e8d3b5}
+nav.chap{padding:14px 12px 0}
+nav.chap a{display:flex;gap:10px;align-items:baseline;padding:8px 12px;border-radius:6px;color:#d2dfe6;text-decoration:none;font-size:14.5px;line-height:1.45}
+nav.chap a .no{flex:0 0 30px;font-family:var(--serif);color:#e0b77c;font-size:13.5px}
+nav.chap a:hover{background:rgba(255,255,255,.08)}
+nav.chap a.on{background:#fff;color:var(--navy);font-weight:700}
+nav.chap a.on .no{color:var(--amber)}
+.toc-in{margin:4px 12px 8px 52px;padding:0;list-style:none;border-left:1px solid rgba(255,255,255,.2)}
+.toc-in a{display:block;padding:3px 0 3px 12px;font-size:13px;color:#aebfca;text-decoration:none;line-height:1.5}
+.toc-in a:hover{color:#fff}
+.navfoot{margin:22px 24px 0;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-size:12px;color:#93a9b5;line-height:1.6}
+.navfoot button{margin-top:10px;background:transparent;color:#dbe6ec;border:1px solid rgba(255,255,255,.35);border-radius:5px;padding:6px 12px;font:inherit;font-size:12.5px;cursor:pointer}
+.navfoot button:hover{background:rgba(255,255,255,.1)}
+main{min-width:0;padding:0 clamp(16px,5vw,64px) 80px}
+.wrap{max-width:880px;margin:0 auto}
+.mbar{display:none}
+header.ch{padding:54px 0 26px;border-bottom:3px double var(--line2);margin-bottom:34px}
+header.ch .no{font-family:var(--serif);font-size:15px;color:var(--amber);letter-spacing:.12em}
+header.ch h1{font-family:var(--serif);font-size:clamp(27px,4.2vw,38px);line-height:1.3;margin:8px 0 12px;color:var(--navy);font-weight:700;text-wrap:balance}
+header.ch p{margin:0;color:var(--ink2);max-width:66ch}
+h2{font-family:var(--serif);font-size:23px;color:var(--navy);margin:52px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line2);line-height:1.4;display:flex;gap:12px;align-items:baseline}
+h2 .n{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--sans);font-size:15px;font-weight:700;transform:translateY(-2px)}
+h3{font-size:18px;margin:32px 0 8px;color:var(--ink);line-height:1.45}
+h3::before{content:"";display:inline-block;width:5px;height:16px;background:var(--amber);margin-right:9px;transform:translateY(2px)}
+h4{font-size:16px;margin:22px 0 6px;color:var(--navy2)}
+p{margin:8px 0 12px}
+ul,ol{margin:6px 0 14px;padding-left:22px}
+li{margin:3px 0}
+li>ul,li>ol{margin:3px 0 6px}
+strong{font-weight:700}
+.lead{font-size:17px;color:var(--ink2)}
+.tblw{overflow-x:auto;margin:14px 0 20px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.6}
+th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
+tr>*:last-child{border-right:0} tbody tr:last-child>*{border-bottom:0}
+thead th{background:var(--navy-soft);color:var(--navy);font-weight:700;text-align:center;white-space:nowrap;border-bottom:1px solid var(--line2)}
+tbody th{background:#faf8f4;font-weight:700;white-space:nowrap}
+td.c,th.c{text-align:center} td.nw{white-space:nowrap}
+table.num td:first-child{text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}
+caption{caption-side:top;text-align:left;padding:10px 12px 6px;font-weight:700;color:var(--ink2);font-size:14.5px}
+.co{border:1px solid var(--line);border-left:5px solid var(--navy2);background:var(--surface);border-radius:6px;padding:14px 18px;margin:16px 0}
+.co>b:first-child,.co>.t{display:block;font-size:13px;letter-spacing:.04em;color:var(--navy2);margin-bottom:4px;font-weight:700}
+.co p:last-child,.co ul:last-child,.co ol:last-child{margin-bottom:0}
+.co.key{border-left-color:var(--amber);background:var(--amber-soft)} .co.key>b:first-child{color:var(--amber)}
+.co.warn{border-left-color:var(--red);background:var(--red-soft)} .co.warn>b:first-child{color:var(--red)}
+.co.chk{border-left-color:var(--green);background:var(--green-soft)} .co.chk>b:first-child{color:var(--green)}
+.co.adapt{border-left-color:var(--navy);background:var(--navy-soft)} .co.adapt>b:first-child{color:var(--navy)}
+.src{font-size:13px;color:var(--muted);margin:6px 0 18px;padding-left:12px;border-left:2px solid var(--line2);line-height:1.6}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:14px 0 20px;background:var(--surface);font-size:14.5px;line-height:1.6}
+.cmp>div{padding:11px 14px;border-bottom:1px solid var(--line)}
+.cmp>div:nth-child(odd){border-right:1px solid var(--line);color:var(--ink2)}
+.cmp>div:nth-last-child(-n+2){border-bottom:0}
+.cmp>.h{font-weight:700;text-align:center;padding:9px}
+.cmp>.h.a{background:var(--red-soft);color:var(--red)} .cmp>.h.b{background:var(--green-soft);color:var(--green)}
+.cmp>div:nth-child(even):not(.h){font-weight:500}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0 20px}
+.flow>div{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--navy2);border-radius:6px;padding:12px 14px;font-size:14.5px;line-height:1.6}
+.flow>div b{display:block;color:var(--navy);margin-bottom:2px}
+.flow>div em{font-style:normal;display:inline-block;font-size:12.5px;color:var(--amber);font-weight:700;margin-bottom:4px}
+.order{list-style:none;padding:0;margin:14px 0 20px;background:var(--surface);border:1px solid var(--line);border-radius:8px;counter-reset:o}
+.order>li{display:flex;gap:12px;align-items:baseline;padding:9px 16px;border-bottom:1px dashed var(--line);margin:0;counter-increment:o}
+.order>li:last-child{border-bottom:0}
+.order>li::before{content:counter(o);flex:none;width:22px;height:22px;border-radius:50%;background:var(--navy-soft);color:var(--navy);font-size:12.5px;font-weight:700;display:inline-grid;place-items:center;transform:translateY(1px)}
+.order>li>span{flex:1}
+.order>li>i{font-style:normal;color:var(--muted);font-size:13.5px;text-align:right;flex:0 1 auto}
+.order small{display:block;color:var(--muted);font-size:13.5px;line-height:1.55}
+.cl{list-style:none;padding:0;margin:8px 0 18px}
+.cl li{margin:0;border-bottom:1px solid var(--line)}
+.cl label{display:flex;gap:10px;align-items:flex-start;padding:8px 4px;cursor:pointer;font-size:15px;line-height:1.6}
+.cl input{flex:none;width:18px;height:18px;margin-top:4px;accent-color:var(--navy2)}
+.cl input:checked+span{color:var(--muted);text-decoration:line-through}
+.cl small{color:var(--muted)}
+.clbar{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-top:18px}
+.clbar button{font:inherit;font-size:12.5px;background:var(--surface);border:1px solid var(--line2);border-radius:5px;padding:4px 10px;cursor:pointer;color:var(--ink2)}
+.dg{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 14px 12px;margin:14px 0 20px;text-align:center;overflow-x:auto}
+.dg figcaption,.dg .cap{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.55}
+.dg .ttl{font-size:14px;font-weight:700;color:var(--ink2);margin-bottom:12px}
+.dgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:14px 0 20px}
+.dgs .dg{margin:0}
+.row{display:flex;justify-content:center;gap:6px;margin:6px 0;flex-wrap:nowrap}
+.st{min-width:44px;height:40px;padding:0 8px;border:1.5px solid var(--line2);border-radius:6px;display:inline-grid;place-items:center;font-size:14px;font-weight:700;background:#fff;color:var(--ink2);white-space:nowrap}
+.st.vip{background:var(--navy);border-color:var(--navy);color:#fff}
+.st.sub{background:var(--amber-soft);border-color:#d9b98f;color:var(--amber)}
+.st.wide{min-width:150px}
+.st.ghost{border-style:dashed;color:var(--muted);font-weight:500}
+.pod{display:inline-block;margin-top:6px;padding:3px 26px;background:var(--ink2);color:#fff;border-radius:4px;font-size:13px}
+.aud{font-size:12.5px;color:var(--muted);margin-top:8px;letter-spacing:.06em}
+svg{max-width:100%;height:auto}
+svg text{font-family:var(--sans)}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:12px 0 18px;font-size:15px}
+.kv dt{font-weight:700;color:var(--navy2)} .kv dd{margin:0}
+.pn{display:flex;justify-content:space-between;gap:12px;margin-top:70px;padding-top:22px;border-top:1px solid var(--line2)}
+.pn a{flex:1;max-width:48%;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 16px;color:var(--ink)}
+.pn a small{display:block;color:var(--muted);font-size:12.5px}
+.pn a b{font-family:var(--serif);color:var(--navy)}
+.pn a.nx{text-align:right;margin-left:auto}
+.pn a:hover{border-color:var(--navy2)}
+footer.ft{margin-top:26px;font-size:12.5px;color:var(--muted);line-height:1.65}
+/* cover */
+.cover{padding:64px 0 34px;border-bottom:3px double var(--line2)}
+.cover .org{font-size:14px;letter-spacing:.14em;color:var(--amber);font-weight:700}
+.cover h1{font-family:var(--serif);font-size:clamp(34px,6vw,56px);line-height:1.22;color:var(--navy);margin:14px 0 10px;font-weight:700}
+.cover .sub{font-size:18px;color:var(--ink2);max-width:60ch}
+.cover .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 12px;font-size:13.5px;color:var(--ink2)}
+.cover .meta span{border:1px solid var(--line2);border-radius:4px;padding:3px 10px;background:var(--surface)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:18px 0 24px}
+.cards a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px;transition:border-color .15s,transform .15s}
+.cards a:hover{border-color:var(--navy2);transform:translateY(-2px)}
+.cards a .no{font-family:var(--serif);color:var(--amber);font-size:14px;letter-spacing:.08em}
+.cards a b{display:block;font-family:var(--serif);font-size:18px;color:var(--navy);margin:2px 0 6px;line-height:1.4}
+.cards a span{font-size:13.5px;color:var(--muted);line-height:1.6;display:block}
+.motto{font-family:var(--serif);font-size:19px;line-height:1.7;color:var(--navy);border:1px solid var(--line2);background:var(--surface);border-radius:8px;padding:18px 22px;margin:22px 0;text-align:center;text-wrap:balance}
+@media (max-width:900px){
+  .layout{display:block}
+  aside.nav{position:fixed;inset:0 auto 0 0;width:min(300px,86vw);transform:translateX(-102%);transition:transform .2s;z-index:30;height:100%}
+  body.open aside.nav{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.45)}
+  .mbar{display:flex;position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;align-items:center;gap:12px;padding:10px 16px;margin:0 calc(-1*clamp(16px,5vw,64px))}
+  .mbar button{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:5px;padding:4px 10px;font:inherit;font-size:14px}
+  .mbar b{font-family:var(--serif);font-size:15px}
+  header.ch{padding-top:34px}
+  html{scroll-padding-top:60px}
+  .cmp{grid-template-columns:1fr}
+  .cmp>.h.a,.cmp>.h.b{display:none}
+  .cmp>div:nth-child(odd){border-right:0;border-bottom:0;padding-bottom:2px;font-size:13.5px}
+  .cmp>div:nth-child(odd):not(.h)::before{content:"관행 ";color:var(--red);font-weight:700}
+  .cmp>div:nth-child(even):not(.h)::before{content:"개선 ";color:var(--green);font-weight:700}
+  .cmp>div:nth-last-child(2){border-bottom:0}
+  .pn{flex-direction:column}.pn a{max-width:none}
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  aside.nav,.mbar,.pn,.clbar button,.noprint{display:none!important}
+  .layout{display:block} main{padding:0}
+  .wrap{max-width:none}
+  h2{break-after:avoid} h3{break-after:avoid}
+  .tblw,.dg,.co,.order,.cmp{break-inside:avoid;border-radius:0}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="nav">
+  <div class="brand"><small>전남광주통합특별시교육청</small><b>의전·행사 매뉴얼</b><span>2026. 11. (안)</span></div>
+  <nav class="chap" aria-label="차례">
+<a href="index.html"><span class="no">·</span><span>표지 · 요약 · 차례</span></a>
+<a href="01-overview.html" class="on"><span class="no">Ⅰ</span><span>매뉴얼 개요와 의전의 이해</span></a>
+<ul class="toc-in" id="toc-in"></ul>
+<a href="02-national-symbols.html"><span class="no">Ⅱ</span><span>국가상징과 국민의례</span></a>
+<a href="03-protocol-seating.html"><span class="no">Ⅲ</span><span>의전예우 기준과 좌석배치</span></a>
+<a href="04-event-planning.html"><span class="no">Ⅳ</span><span>행사 준비와 진행 절차</span></a>
+<a href="05-official-events.html"><span class="no">Ⅴ</span><span>공식행사 시행절차</span></a>
+<a href="06-meetings.html"><span class="no">Ⅵ</span><span>회의 운영 의전</span></a>
+<a href="07-speeches.html"><span class="no">Ⅶ</span><span>각종 식사(式辭)의 작성</span></a>
+<a href="08-appendix.html"><span class="no">부록</span><span>참고자료 · 관계 법규</span></a>
+  </nav>
+  <div class="navfoot">본 매뉴얼은 참고용 기준이며, 행사 성격과 여건에 맞게 적용한다.<br><button id="printbtn" type="button">이 장 인쇄</button></div>
+</aside>
+<main>
+<div class="mbar"><button id="mtoggle" type="button" aria-label="차례 열기">☰ 차례</button><b>Ⅰ 개요</b></div>
+<div class="wrap">
+<header class="ch">
+  <div class="no">Ⅰ</div>
+  <h1>매뉴얼 개요와 의전의 이해</h1>
+  <p>이 매뉴얼을 왜 만들었고 어디에 적용하는지, 그리고 우리 교육청이 지향하는 의전이 무엇인지를 먼저 정리한다.</p>
+</header>
+
+<h2 id="s1"><span class="n">1</span><span>매뉴얼 제작 목적</span></h2>
+<p>전남광주통합특별시교육청과 소속 기관이 주최·주관하는 각종 공식 의전행사에서 행사 목적을 충실히 달성하고, 참석한 내빈과 참여자에게 알맞은 예우를 다하기 위하여 「전남광주통합특별시교육청 의전·행사 매뉴얼」을 작성한다.</p>
+<p>2026년 7월 1일 통합특별시교육청 출범으로 종전 광주광역시교육청과 전라남도교육청의 의전 관행이 한 기관 안에서 함께 쓰이게 되었다. 이 매뉴얼은 두 권역이 같은 기준으로 행사를 준비할 수 있도록 공통 기준을 제시하는 데에도 목적이 있다.</p>
+
+<h2 id="s2"><span class="n">2</span><span>매뉴얼 제작 방법</span></h2>
+<ul>
+  <li>「광주교육 의전·행사 매뉴얼」(광주광역시교육청 총무과, 2023. 5.)의 체계와 내용을 기본으로 하였다.</li>
+  <li>행정안전부 「2024 정부의전편람」(2024. 8.) 중 <strong>제2장 국가상징과 국민의례</strong>, <strong>제6장 국무회의 및 차관회의 운영</strong>을 우리 교육청 행사·회의에 맞게 발췌·편집하였다.</li>
+  <li>기관 명칭, 직제, 현행 법령은 2026. 11. 11. 기준으로 다시 확인하여 반영하였다.</li>
+</ul>
+
+<h2 id="s3"><span class="n">3</span><span>매뉴얼의 적용 범위</span></h2>
+<ul>
+  <li>전남광주통합특별시교육청 본청의 공식 의전행사</li>
+  <li>교육지원청(24개), 직속기관 및 교육지원청 소속 기관의 공식 의전행사</li>
+  <li>유·초·중·고·특수학교 등 각급 학교의 공식 의전행사</li>
+</ul>
+<div class="co adapt"><b>통합청 적용 — 본청 조직</b>
+<p>「행정기구 설치 조례」 제6조·제7조 및 같은 조례 시행규칙 제3조에 따른 본청 편제는 다음과 같다. 좌석배치와 소개 순서의 직제순은 이 순서를 기준으로 한다.</p>
+<div class="tblw" style="margin-bottom:0"><table>
+<thead><tr><th>구분</th><th>소관 실·국 및 보좌기관</th></tr></thead>
+<tbody>
+<tr><th>교육감</th><td>홍보담당관(보좌기관)</td></tr>
+<tr><th>전남부교육감<br><small>(제1부교육감)</small></th><td>기획조정실 · 미래성장국 · 인재교육국 · 행정운영국</td></tr>
+<tr><th>광주부교육감<br><small>(제2부교육감)</small></th><td>미래정책국 · 학교교육국 · 교육행정국 / K-교육통합추진단 · 감사관(보좌기관)</td></tr>
+</tbody></table></div>
+</div>
+<p class="src">근거: 「전남광주통합특별시교육청 행정기구 설치 조례」 제4조(별표 1), 제6조, 제7조 / 같은 조례 시행규칙 제3조 (각 2026. 10. 1. 시행)</p>
+
+<h2 id="s4"><span class="n">4</span><span>교육청 주관 행사의 주요 간부 참석 범위</span></h2>
+<div class="tblw"><table>
+<thead><tr><th>행사 인원</th><th>참석 범위</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td class="c nw">100명 이상</td><td>교육감 등 간부</td><td rowspan="3">행사 인원은 일반적 기준이며, 비서실에서 중요도를 평가한 뒤 교육감 참석 여부를 판단한다.</td></tr>
+<tr><td class="c nw">60명 이상 ~ 100명 미만</td><td>부교육감 등 간부</td></tr>
+<tr><td class="c nw">60명 미만</td><td>주관 부서의 실·국장 등 간부</td></tr>
+</tbody></table></div>
+<div class="co adapt"><b>통합청 적용</b>
+<ul>
+  <li>부교육감 참석 행사는 조례 제6조의 분장에 따라 <strong>행사 주관 실·국을 소관하는 부교육감</strong>이 참석하는 것을 기본으로 한다.</li>
+  <li>행사의 취지와 규모에 맞게 소관 실·국장, 과장 등이 교육감·부교육감 의전을 수행한다.</li>
+</ul></div>
+<div class="co warn"><b>확인 필요</b>두 권역에 걸친 행사, 개최 지역과 소관 부교육감의 권역이 다른 행사의 참석자 결정 기준은 원 자료에 없는 사항이다. 비서실 통합 운영 방침이 정해지면 그에 따른다.</div>
+
+<h2 id="s5"><span class="n">5</span><span>각종 의전·행사 추진 원칙</span></h2>
+<p class="lead"><strong>학생·교직원·학부모의 불편을 최소화하고 위화감을 없앤다.</strong></p>
+<p>우리 교육청의 의전은 시민을 먼저 배려하고, 편안하면서도 격식 있는 참석자 위주의 의전을 지향한다. 경직되고 관행적인 방식에서 벗어나 시민(참여자) 중심으로 모두가 공감할 수 있는 유연하고 효율적인 의전으로 변화를 추구한다.</p>
+<div class="cmp">
+  <div class="h a">관행적 의전</div><div class="h b">관료적·권위적 관행 타파</div>
+  <div>행사와 무관한 학생·교직원·학부모를 강제 동원하여 민원 유발</div><div>행사와 관계있는 학생·교직원·학부모가 참여할 수 있도록 사전 홍보·안내(무관한 인원 동원 금지)</div>
+  <div>행사를 이유로 한 과잉 주차단속, 주변 정비로 학교 주변과 행사장 인근 주민·상인 불편 초래</div><div>행사를 위한 단속·정비 등 통제를 최소화하고 주차 장소를 사전 정비</div>
+  <div>무대 배치를 내빈용과 참석자용으로 차별화하거나, 야외 행사에서 주요 내빈석에만 차양막을 설치하여 위화감 조성</div><div>행사 식장(무대 배치)은 학생·교직원·학부모와 동일하게 설치</div>
+  <div>단상 위에 내빈 좌석을 두어 청중을 내려다보는 권위주의적 모습 연출</div><div>가능한 한 단상에 내빈을 배치하지 않고, 부득이한 경우 단상 위 내빈도 모두 서서 진행</div>
+  <div>표창·시상·장학금 수여 행사에서 예행연습을 위해 수상자를 일찍 오게 하거나 좌석 없이 세워 두어 불쾌감 유발</div><div>철저한 사전 준비로 예행연습 없이 수여하거나 연습을 최소화하고, 반드시 좌석을 준비하여 수상자 편의를 최대한 배려</div>
+  <div>문화·체육행사에서 내빈 인사 말씀을 본행사(경기·공연) 전에 획일적으로 배치하여 본행사를 지연시키고 호응도를 떨어뜨림</div><div>내빈 인사 말씀은 가급적 생략하고, 필요한 경우 상황에 맞게 자연스럽게 배치하여 본행사에 영향을 주지 않도록 진행</div>
+  <div>차문 열어주기, 의자 빼주기, 이동 통로 강제 길 트기, 승강기 잡아두기, 우산 씌워주기, 흉화 착용, 무리한 박수 유도 등 경직된 의전</div><div>관료적·권위적 관행을 타파하고 자연스러운 의전 추진</div>
+  <div>현장 방문 때 과다한 수행 인원으로 위화감을 조성하고 소통, 차량 통행, 영업에 지장 초래</div><div>방문 목적을 달성할 수 있는 최소 인원만 수행하고 현장 주변에 불편을 주지 않도록 유의</div>
+  <div>사회적 약자에 대한 배려 미흡</div><div>행사 주관단체 관계자와 사회적 약자(장애인, 노약자, 어린이 등)에게 앞줄 좌석을 우선 배려</div>
+</div>
+<p class="src">출처: 「광주교육 의전·행사 매뉴얼」(2023. 5.) Ⅰ-5</p>
+
+<h2 id="s6"><span class="n">6</span><span>의전의 개념</span></h2>
+<p>의전(儀典)은 예(禮)를 갖추어 베푸는 각종 행사 등에서 행해지는 예법으로, 곧 <strong>'사람과 사람의 관계를 평안하고 평화롭게 하는 기준과 절차'</strong>라 할 수 있다.</p>
+<p>여기에서 '사람'은 개개인은 물론 가정, 직장(조직체), 사회, 국가, 국제관계에 이르기까지 인류 사회의 모든 활동 주체를 포함한다. 오늘날의 의전은 사회적 규범으로서 예가 제도화된 것이며, 국가·사회의 통합과 정체성을 높이는 중요한 역할을 한다. 다만 이러한 기준과 절차는 고정되어 변하지 않는 것이 아니라 때와 장소에 따라 달라진다.</p>
+<p>의전은 행사를 통해서만 나타나는 것이 아니다. 국기 게양, 국민의례와 같이 국가상징에 예를 표하는 것도 넓은 의미의 의전이다(<a href="02-national-symbols.html">Ⅱ장</a>).</p>
+
+<h2 id="s7"><span class="n">7</span><span>의전의 변화</span></h2>
+<p>행사를 직접 주관하는 기관은 행사 본래의 목적을 달성하기 위해 행사 진행뿐 아니라 행사장 준비, 초청인사 관리에 이르기까지 세심한 배려와 치밀한 사전 준비를 해야 한다.</p>
+<p>많은 사람이 의전을 형식과 관례에 따른 기계적인 업무로만 보고 딱딱한 것으로 받아들이는 경향이 있다. 그러나 관행과 규정을 복잡한 상황에 기계적으로 적용하면 서로가 불편해진다. 잘하는 의전은 상황에 따라 물 흐르듯 이루어지는 것이다.</p>
+<div class="co warn"><b>경계할 것</b>내용보다 형식에만 집중하여 수단과 목적이 뒤바뀌거나, '과잉 의전', '황제 의전'으로 보는 사람에게 불편을 주고 사회적 물의를 일으키는 사례가 있다. 의전이 상황에 알맞은 예절이 아니라 윗사람에 대한 맹목적 충성으로 변질되면 그 조직은 시간이 갈수록 경쟁력을 잃고 비효율적이 된다.</div>
+<p class="src">출처: 「광주교육 의전·행사 매뉴얼」(2023. 5.) Ⅱ</p>
+
+<div class="pn"><a href="index.html"><small>← 이전</small><b>표지 · 요약 · 차례</b></a><a class="nx" href="02-national-symbols.html"><small>다음 →</small><b>Ⅱ 국가상징과 국민의례</b></a></div>
+<footer class="ft">전남광주통합특별시교육청 의전·행사 매뉴얼(안) · 2026. 11. 작성 · 「광주교육 의전·행사 매뉴얼」(2023. 5.) 및 행정안전부 「2024 정부의전편람」(2024. 8.) 제2장·제6장을 바탕으로 재구성</footer>
+</div>
+</main>
+</div>
+<script>
+(function(){
+  var b=document.body;
+  var t=document.getElementById('mtoggle');
+  if(t)t.addEventListener('click',function(){b.classList.toggle('open')});
+  document.querySelector('aside.nav').addEventListener('click',function(e){if(e.target.closest('a'))b.classList.remove('open')});
+  document.addEventListener('click',function(e){if(b.classList.contains('open')&&!e.target.closest('aside.nav')&&!e.target.closest('#mtoggle'))b.classList.remove('open')});
+  // in-page toc
+  var ul=document.getElementById('toc-in');
+  if(ul){var hs=document.querySelectorAll('main h2');hs.forEach(function(h,i){if(!h.id)h.id='s'+(i+1);var li=document.createElement('li');var a=document.createElement('a');a.href='#'+h.id;a.textContent=h.textContent.replace(/^\s*\d+\s*/,'');li.appendChild(a);ul.appendChild(li)});if(!hs.length)ul.remove()}
+  // checklists
+  var key='jgedu-protocol:'+location.pathname.split('/').pop();
+  var st={};try{st=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+  var boxes=document.querySelectorAll('.cl input[type=checkbox]');
+  function save(){try{localStorage.setItem(key,JSON.stringify(st))}catch(e){}}
+  function count(){document.querySelectorAll('[data-cl]').forEach(function(bar){var g=document.getElementById(bar.getAttribute('data-cl'));if(!g)return;var a=g.querySelectorAll('input').length,c=g.querySelectorAll('input:checked').length;bar.querySelector('.cnt').textContent=c+' / '+a+' 확인'})}
+  boxes.forEach(function(x,i){x.dataset.i=i;if(st[i])x.checked=true;x.addEventListener('change',function(){st[i]=x.checked?1:0;save();count()})});
+  document.querySelectorAll('[data-reset]').forEach(function(btn){btn.addEventListener('click',function(){var g=document.getElementById(btn.getAttribute('data-reset'));g.querySelectorAll('input').forEach(function(x){x.checked=false;st[x.dataset.i]=0});save();count()})});
+  count();
+  var p=document.getElementById('printbtn');if(p)p.addEventListener('click',function(){window.print()});
+})();
+</script>
+</body>
+</html>
